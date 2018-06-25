@@ -10,9 +10,18 @@ class PostsShow extends Component {
 
   render() {
     // this.props === ownProps
+    const { post } = this.props;
+
+    // Wait for data loaded
+    if (!post) {
+      return <div>Loading...</div>
+    }
+
     return (
       <div>
-        Posts Show!
+        <h3>{post.title}</h3>
+        <h6>Categories: {post.categories}</h6>
+        <p>{post.content}</p>
       </div>
     );
   }
